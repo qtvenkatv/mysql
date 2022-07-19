@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  clusterName: 'myAKSCluster'
+  name: myaks-db
+  labels: 
+  envirornment: test
+  app: mytestdb
+  namespace: 'mydbapp'
+spec:
+  replicas: 3
+  template: 
+    metadata:
+      clusterName: 'myAKSCluster'
+      name:  myaks-db
+    spec:
+      - containers:
+          - image: mysql:latest
+            volumeMounts:
+              - mountPath:  /mytestdb              
+        ports:
+          - containerPort: 3306
+            hostPort: 33060
+            protocol: tcp
+        volumes: 
+          - name: test-volume
+    

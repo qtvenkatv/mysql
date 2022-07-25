@@ -1,6 +1,6 @@
 #!groovy
 pipeline {
-    agent none
+    agent (Built-In Node)
     stages {
         stage ('check out source') {
             steps {

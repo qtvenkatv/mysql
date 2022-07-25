@@ -9,7 +9,7 @@ pipeline {
         }
         stage ("creat the build using the image") {
             steps {
-                sh 'docker build -t sps:latest .'
+                sh 'sudo docker build -t sps:latest .'
             }
         }
     }

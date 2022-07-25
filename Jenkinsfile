@@ -1,6 +1,6 @@
 #!groovy
 pipeline {
-    agent node1
+    agent { label 'JDK11' }
     stages {
         stage ('check out source') {
             steps {

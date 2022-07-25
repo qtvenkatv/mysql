@@ -5,9 +5,14 @@ pipeline {
         stage ('check out source') {
             steps {
                 git url:'https://github.com/qtvenkatv/mysql.git', branch:'master'
-                sh -c cd /springpet
             }
             
+        }
+        stage (" move the directory"){
+            steps {
+                sh 'cd /springpet'
+
+            }
         }
     }
 }

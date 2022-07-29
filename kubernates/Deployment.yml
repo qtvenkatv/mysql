@@ -1,4 +1,18 @@
-apiVersion: app/v1
-kind: Deplo
+apiVersion: apps/v1
+kind: Deployment
 metadata:
+  clusterName: myAKSCluster
+  name: appdeploy
 spec:
+  replicas: 2
+  template:
+    metadata:
+      name: appdeploy
+    spec:
+      - containers: 
+        image: mynginix:latest
+        name: app_nginix
+        ports:
+          - containerPort: 8080
+            hostPort: 80
+            protocol: TCP

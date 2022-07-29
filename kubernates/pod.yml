@@ -8,10 +8,11 @@ spec:
   containers:
     name: hello-pod
     image: jenkins/jenkins:lts-jdk11
-    livenessProbe:
     ports:
       - containerPort: 8080
         hostPort: 80
         protocol: tcp
+
+    
   
 
